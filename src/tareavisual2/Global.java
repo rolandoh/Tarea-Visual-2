@@ -15,5 +15,5 @@ public class Global {
     public static int normalPS4XBX[] = {50,5};
     public static int estrenoWII[] = {50,4};
     public static int normalWII[] = {40,6};
-    
+        
 }
