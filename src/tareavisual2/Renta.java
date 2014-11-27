@@ -162,46 +162,54 @@ public class Renta extends javax.swing.JFrame {
 
     private void btnCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcActionPerformed
            // TODO add your handling code here:
+        if(!txtDias.getText().equals("")){
         int dias = Integer.parseInt(txtDias.getText()), total=0;
         String consola = cbConsola.getSelectedItem().toString();
         String estado = cbEstado.getSelectedItem().toString();
         if(consola.equals("PS4") || consola.equals("XBOX ONE")){
             switch(estado){
-                case "ESTRENO": if(dias<=Global.estrenoPS4XBX[1]){
-                total = Global.estrenoPS4XBX[0];
-                }
-                else{
-                total = Global.estrenoPS4XBX[0] + (Global.estrenoPS4XBX[0]/2)*(dias-Global.estrenoPS4XBX[1]);
-                }
+                case "ESTRENO": if(dias<=Global.estreno[Global.PSBOX][Global.Dias]){
+                    total = Global.estreno[Global.PSBOX][Global.Precio];
+                    }
+                    else{
+                    total = Global.estreno[Global.PSBOX][Global.Precio] + 
+                        (Global.estreno[Global.PSBOX][Global.Precio]/2)*(dias-Global.estreno[Global.PSBOX][Global.Dias]);
+                    }
                 break;
-                case "NORMAL": if(dias<=Global.normalPS4XBX[1]){
-                total = Global.normalPS4XBX[0];
-                }
-                else{
-                total = Global.normalPS4XBX[0] + (Global.normalPS4XBX[0]/2)*(dias-Global.normalPS4XBX[1]);
-                }
-                    break;
+                case "NORMAL": if(dias<=Global.normal[Global.PSBOX][Global.Dias]){
+                    total = Global.normal[Global.PSBOX][Global.Precio];
+                    }
+                    else{
+                    total = Global.normal[Global.PSBOX][Global.Precio] + 
+                            (Global.normal[Global.PSBOX][Global.Precio]/2)*(dias-Global.normal[Global.PSBOX][Global.Dias]);
+                    }
+                break;
             }
         }
         else{
             switch(estado){
-                case "ESTRENO": if(dias<=Global.estrenoWII[1]){
-                total = Global.estrenoWII[0];
-                }
-                else{
-                total = Global.estrenoWII[0] + (Global.estrenoWII[0]/2)*(dias-Global.estrenoWII[1]);
-                }
+                case "ESTRENO": if(dias<=Global.estreno[Global.WII][Global.Dias]){
+                    total = Global.estreno[Global.WII][Global.Precio];
+                    }
+                    else{
+                    total = Global.estreno[Global.WII][Global.Precio] + 
+                        (Global.estreno[Global.WII][Global.Precio]/2)*(dias-Global.estreno[Global.WII][Global.Dias]);
+                    }
                 break;
-                case "NORMAL": if(dias<=Global.normalWII[1]){
-                total = Global.normalWII[0];
-                }
-                else{
-                total = Global.normalWII[0] + (Global.normalWII[0]/2)*(dias-Global.normalWII[1]);
-                }
+                case "NORMAL": if(dias<=Global.normal[Global.WII][Global.Dias]){
+                    total = Global.normal[Global.WII][Global.Precio];
+                    }
+                    else{
+                    total = Global.normal[Global.WII][Global.Precio] + 
+                            (Global.normal[Global.WII][Global.Precio]/2)*(dias-Global.normal[Global.WII][Global.Dias]);
+                    }
                 break;
             }
         }
+        if(total!=0){
         txtTotal.setText(""+total);
+        }
+        }
     }//GEN-LAST:event_btnCalcActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
