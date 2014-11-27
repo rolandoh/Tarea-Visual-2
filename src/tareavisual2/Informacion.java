@@ -16,6 +16,7 @@ public class Informacion extends javax.swing.JFrame {
      */
     public Informacion() {
         initComponents();
+        initCombo();
     }
 
     /**
@@ -28,19 +29,49 @@ public class Informacion extends javax.swing.JFrame {
     private void initComponents() {
 
         cbConsola = new javax.swing.JComboBox();
-        cbJuego = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
+        btnVer = new javax.swing.JButton();
+        txtEstrenoPrecio = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtEstrenoDias = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtNormalPrecio = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtNormalDias = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        cbConsola.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cbJuego.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Consola:");
 
-        jLabel2.setText("Juego");
+        btnVer.setText("Ver");
+        btnVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerActionPerformed(evt);
+            }
+        });
+
+        txtEstrenoPrecio.setEditable(false);
+
+        jLabel2.setText("Estreno:");
+
+        jLabel3.setText("Normal:");
+
+        jLabel4.setText("Precio:");
+
+        txtEstrenoDias.setEditable(false);
+
+        jLabel5.setText("Dias Maximo:");
+
+        jLabel6.setText("Precio:");
+
+        txtNormalPrecio.setEditable(false);
+
+        jLabel7.setText("Dias Maximo:");
+
+        txtNormalDias.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,11 +83,28 @@ public class Informacion extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbConsola, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel2))
-                .addContainerGap(187, Short.MAX_VALUE))
+                        .addComponent(cbConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVer))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(9, 9, 9)
+                        .addComponent(txtEstrenoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addGap(9, 9, 9)
+                        .addComponent(txtEstrenoDias, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(9, 9, 9)
+                        .addComponent(txtNormalPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)
+                        .addGap(9, 9, 9)
+                        .addComponent(txtNormalDias, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,17 +112,60 @@ public class Informacion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbConsola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel1)
+                    .addComponent(btnVer))
+                .addGap(44, 44, 44)
+                .addComponent(jLabel2)
+                .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cbJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(226, Short.MAX_VALUE))
+                    .addComponent(txtEstrenoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtEstrenoDias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(29, 29, 29)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNormalPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtNormalDias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
+        
+        if(cbConsola.getSelectedItem().toString().equals("WII U")){
+            txtEstrenoPrecio.setText(""+Global.estreno[Global.WII][Global.Precio]);
+            txtEstrenoDias.setText(""+Global.estreno[Global.WII][Global.Dias]);
+            
+            txtNormalPrecio.setText(""+Global.normal[Global.WII][Global.Precio]);
+            txtNormalDias.setText(""+Global.normal[Global.WII][Global.Dias]);
+        }else if(cbConsola.getSelectedItem().toString().equals("Select one")){
+            txtEstrenoPrecio.setText("");
+            txtEstrenoDias.setText("");
+            
+            txtNormalPrecio.setText("");
+            txtNormalDias.setText("");
+        }else{
+            txtEstrenoPrecio.setText(""+Global.estreno[Global.PSBOX][Global.Precio]);
+            txtEstrenoDias.setText(""+Global.estreno[Global.PSBOX][Global.Dias]);
+            
+            txtNormalPrecio.setText(""+Global.normal[Global.PSBOX][Global.Precio]);
+            txtNormalDias.setText(""+Global.normal[Global.PSBOX][Global.Dias]);
+        }
+    }//GEN-LAST:event_btnVerActionPerformed
+
+    public void initCombo(){
+        cbConsola.addItem("Select one");
+        for (int i = 0; i < Global.CONSOLAS.length; i++) {
+            cbConsola.addItem(Global.CONSOLAS[i]);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -111,9 +202,18 @@ public class Informacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVer;
     private javax.swing.JComboBox cbConsola;
-    private javax.swing.JComboBox cbJuego;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField txtEstrenoDias;
+    private javax.swing.JTextField txtEstrenoPrecio;
+    private javax.swing.JTextField txtNormalDias;
+    private javax.swing.JTextField txtNormalPrecio;
     // End of variables declaration//GEN-END:variables
 }

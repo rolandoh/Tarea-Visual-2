@@ -53,6 +53,11 @@ public class Menu extends javax.swing.JFrame {
 
         btInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btInfo.setText("Informacion");
+        btInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInfoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +108,11 @@ public class Menu extends javax.swing.JFrame {
     private void btRentaComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_btRentaComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_btRentaComponentAdded
+
+    private void btInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInfoActionPerformed
+        Informacion info = new Informacion();
+        info.setVisible(true);
+    }//GEN-LAST:event_btInfoActionPerformed
 
     /**
      * @param args the command line arguments

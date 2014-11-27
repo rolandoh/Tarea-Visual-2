@@ -99,6 +99,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Informacion"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btInfoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
