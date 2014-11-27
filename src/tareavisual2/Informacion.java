@@ -138,24 +138,27 @@ public class Informacion extends javax.swing.JFrame {
 
     private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
         
-        if(cbConsola.getSelectedItem().toString().equals("WII U")){
-            txtEstrenoPrecio.setText(""+Global.estreno[Global.WII][Global.Precio]);
-            txtEstrenoDias.setText(""+Global.estreno[Global.WII][Global.Dias]);
-            
-            txtNormalPrecio.setText(""+Global.normal[Global.WII][Global.Precio]);
-            txtNormalDias.setText(""+Global.normal[Global.WII][Global.Dias]);
-        }else if(cbConsola.getSelectedItem().toString().equals("Select one")){
-            txtEstrenoPrecio.setText("");
-            txtEstrenoDias.setText("");
-            
-            txtNormalPrecio.setText("");
-            txtNormalDias.setText("");
-        }else{
-            txtEstrenoPrecio.setText(""+Global.estreno[Global.PSBOX][Global.Precio]);
-            txtEstrenoDias.setText(""+Global.estreno[Global.PSBOX][Global.Dias]);
-            
-            txtNormalPrecio.setText(""+Global.normal[Global.PSBOX][Global.Precio]);
-            txtNormalDias.setText(""+Global.normal[Global.PSBOX][Global.Dias]);
+        switch(cbConsola.getSelectedItem().toString()){
+            case "WII U":
+                txtEstrenoPrecio.setText(""+Global.estreno[Global.WII][Global.Precio]);
+                txtEstrenoDias.setText(""+Global.estreno[Global.WII][Global.Dias]);
+
+                txtNormalPrecio.setText(""+Global.normal[Global.WII][Global.Precio]);
+                txtNormalDias.setText(""+Global.normal[Global.WII][Global.Dias]);
+            break;
+            case "Select one":
+                txtEstrenoPrecio.setText("");
+                txtEstrenoDias.setText("");
+
+                txtNormalPrecio.setText("");
+                txtNormalDias.setText("");
+            break;
+            default:
+                txtEstrenoPrecio.setText(""+Global.estreno[Global.PSBOX][Global.Precio]);
+                txtEstrenoDias.setText(""+Global.estreno[Global.PSBOX][Global.Dias]);
+
+                txtNormalPrecio.setText(""+Global.normal[Global.PSBOX][Global.Precio]);
+                txtNormalDias.setText(""+Global.normal[Global.PSBOX][Global.Dias]);
         }
     }//GEN-LAST:event_btnVerActionPerformed
 
